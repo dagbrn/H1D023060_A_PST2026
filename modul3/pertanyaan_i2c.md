@@ -11,8 +11,6 @@ Arduino sebagai master (mengontrol), dan LCD sebagai slave (penerima). Setiap de
 
 ## 2. Apakah Pin Potensiometer Harus Seperti Itu?
 
-**Jawab: YA, harus seperti itu!**
-
 Konfigurasi yang benar adalah Pin Kiri (GND) → Pin Tengah (A0) → Pin Kanan (VCC 5V). Pin potensiometer harus terhubung dari ground ke power supply melalui pin analog agar memberikan range tegangan 0-5V penuh untuk ADC. Dengan konfigurasi ini, ketika potensiometer diputar ke kiri, ADC akan membaca nilai 0, dan ketika diputar ke kanan, ADC akan membaca nilai 1023. Arah pembacaan ini akan sesuai dengan ekspektasi pengguna.
 
 Jika pin kiri dan kanan tertukar (VCC → A0 → GND), pembacaan ADC akan terbaca terbalik. Potensiometer yang diputar ke kiri akan menghasilkan ADC 1023, sedangkan diputar ke kanan menghasilkan ADC 0. Meskipun ADC masih membaca dalam range 0-1023 dan tegangan tetap 0-5V, arah kontrolnya menjadi kebalikan dan dapat membingungkan pengguna.
